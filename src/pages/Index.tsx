@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar";
 import AppointmentWidget from "@/components/AppointmentWidget";
 import ServiceCard from "@/components/ServiceCard";
@@ -61,7 +62,19 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact & Hours Section */}
+      {/* About Section */}
+      <section id="about" className="py-16 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-8">About Us</h2>
+          <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto">
+            At Redental, we're committed to providing exceptional dental care in a
+            comfortable and modern environment. Our team of experienced professionals
+            uses the latest technology to ensure the best possible treatment for our patients.
+          </p>
+        </div>
+      </section>
+
+      {/* Contact & Hours Section - MOVED TO BOTTOM */}
       <section id="contact" className="py-16 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Contact Us</h2>
@@ -82,18 +95,6 @@ const Index = () => {
             </div>
             <OperatingHours />
           </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">About Us</h2>
-          <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto">
-            At Redental, we're committed to providing exceptional dental care in a
-            comfortable and modern environment. Our team of experienced professionals
-            uses the latest technology to ensure the best possible treatment for our patients.
-          </p>
         </div>
       </section>
     </div>
