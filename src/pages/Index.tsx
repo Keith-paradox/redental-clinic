@@ -1,29 +1,35 @@
-
 import Navbar from "@/components/Navbar";
 import AppointmentWidget from "@/components/AppointmentWidget";
 import ServiceCard from "@/components/ServiceCard";
+import OperatingHours from "@/components/OperatingHours";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 const Index = () => {
   const services = [
     {
-      title: "General Dentistry",
-      description: "Comprehensive dental care including cleanings, fillings, and preventive treatments.",
+      title: "General Consultation",
+      description: "Comprehensive dental examination and treatment planning for your oral health.",
       icon: "🦷"
     },
     {
-      title: "Cosmetic Dentistry",
-      description: "Transform your smile with whitening, veneers, and other aesthetic procedures.",
+      title: "Teeth Cleaning",
+      description: "Professional cleaning to remove plaque and maintain oral hygiene.",
       icon: "✨"
     },
     {
-      title: "Orthodontics",
-      description: "Straighten your teeth with braces and other orthodontic treatments.",
-      icon: "📏"
+      title: "Teeth Whitening",
+      description: "Advanced whitening treatments for a brighter, more confident smile.",
+      icon: "💫"
     },
     {
-      title: "Emergency Care",
-      description: "24/7 emergency dental care for immediate attention when you need it most.",
-      icon: "🚑"
+      title: "Root Canal Treatment",
+      description: "Expert care for infected or damaged tooth pulp to save your natural tooth.",
+      icon: "🔬"
+    },
+    {
+      title: "Braces Consultation",
+      description: "Orthodontic assessment and treatment planning for teeth alignment.",
+      icon: "📏"
     }
   ];
 
@@ -47,7 +53,7 @@ const Index = () => {
       <section id="services" className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => (
               <ServiceCard key={service.title} {...service} />
             ))}
@@ -55,8 +61,32 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Contact & Hours Section */}
+      <section id="contact" className="py-16 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Contact Us</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="space-y-6">
+              <div className="flex items-center gap-3">
+                <MapPin className="w-5 h-5 text-primary" />
+                <p className="text-lg">123 Smile Avenue, Denton, TX 75001, USA</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-primary" />
+                <p className="text-lg">+1 (555) 123-4567</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-primary" />
+                <p className="text-lg">info@redentalclinic.com</p>
+              </div>
+            </div>
+            <OperatingHours />
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
-      <section id="about" className="py-16 px-4 bg-gray-50">
+      <section id="about" className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8">About Us</h2>
           <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto">
@@ -64,18 +94,6 @@ const Index = () => {
             comfortable and modern environment. Our team of experienced professionals
             uses the latest technology to ensure the best possible treatment for our patients.
           </p>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-16 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">Contact Us</h2>
-          <div className="space-y-4">
-            <p className="text-lg">📞 (123) 456-7890</p>
-            <p className="text-lg">📍 123 Dental Street, Medical City, MC 12345</p>
-            <p className="text-lg">✉️ contact@redental.com</p>
-          </div>
         </div>
       </section>
     </div>
