@@ -1,6 +1,4 @@
-
 import Navbar from "@/components/Navbar";
-import AppointmentWidget from "@/components/AppointmentWidget";
 import ServiceCard from "@/components/ServiceCard";
 import OperatingHours from "@/components/OperatingHours";
 import { MapPin, Phone, Mail } from "lucide-react";
@@ -37,7 +35,6 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <AppointmentWidget />
       
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 bg-gradient-to-b from-primary/5 to-white">
