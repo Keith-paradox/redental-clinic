@@ -13,7 +13,6 @@ const Navbar = () => {
             <a href="#services" className="text-gray-600 hover:text-primary">Services</a>
             <a href="#about" className="text-gray-600 hover:text-primary">About</a>
             <a href="#contact" className="text-gray-600 hover:text-primary">Contact</a>
-            <Button>Book Appointment</Button>
           </div>
         </div>
       </div>

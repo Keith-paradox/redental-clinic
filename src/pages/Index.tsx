@@ -44,7 +44,7 @@ const Index = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 bg-gradient-to-b from-primary/5 via-blue-50/50 to-white">
+      <section className="pt-32 pb-16 px-4 bg-gradient-to-t from-blue-50/30 via-white to-white">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-6">Welcome to Redental</h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -67,7 +67,7 @@ const Index = () => {
           >
             <CarouselContent>
               {services.map((service, index) => (
-                <CarouselItem key={index} className="md:basis-1/3">
+                <CarouselItem key={index} className="md:basis-1/4">
                   <ServiceCard {...service} />
                 </CarouselItem>
               ))}
@@ -79,7 +79,7 @@ const Index = () => {
       </section>
 
       {/* About Section with subtle background */}
-      <section id="about" className="py-16 px-4 bg-purple-50/30">
+      <section id="about" className="py-16 px-4 bg-blue-50/30">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8">About Us</h2>
           <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto">
@@ -91,7 +91,7 @@ const Index = () => {
       </section>
 
       {/* Contact & Hours Section */}
-      <section id="contact" className="py-16 px-4 bg-blue-50/20">
+      <section id="contact" className="py-16 px-4 bg-gradient-to-b from-blue-50/30 via-white to-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Contact Us</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
