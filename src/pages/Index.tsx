@@ -2,6 +2,13 @@ import Navbar from "@/components/Navbar";
 import ServiceCard from "@/components/ServiceCard";
 import OperatingHours from "@/components/OperatingHours";
 import { MapPin, Phone, Mail } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Index = () => {
   const services = [
@@ -33,11 +40,11 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 bg-gradient-to-b from-primary/5 to-white">
+      <section className="pt-32 pb-16 px-4 bg-gradient-to-b from-primary/5 via-blue-50/50 to-white">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-6">Welcome to Redental</h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -48,19 +55,31 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-16 px-4">
+      <section id="services" className="py-16 px-4 bg-blue-50/30">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service) => (
-              <ServiceCard key={service.title} {...service} />
-            ))}
-          </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full max-w-5xl mx-auto"
+          >
+            <CarouselContent>
+              {services.map((service, index) => (
+                <CarouselItem key={index} className="md:basis-1/3">
+                  <ServiceCard {...service} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-16 px-4">
+      {/* About Section with subtle background */}
+      <section id="about" className="py-16 px-4 bg-purple-50/30">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8">About Us</h2>
           <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto">
@@ -71,8 +90,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact & Hours Section - MOVED TO BOTTOM */}
-      <section id="contact" className="py-16 px-4 bg-gray-50">
+      {/* Contact & Hours Section */}
+      <section id="contact" className="py-16 px-4 bg-blue-50/20">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Contact Us</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
