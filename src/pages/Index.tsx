@@ -117,7 +117,7 @@ const Index = () => {
       </section>
       
       {/* Contact Widget */}
-      <ContactWidget />
+      {/* <ContactWidget /> */}
     </div>
   );
 };
