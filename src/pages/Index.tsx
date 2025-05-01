@@ -1,6 +1,8 @@
+
 import Navbar from "@/components/Navbar";
 import ServiceCard from "@/components/ServiceCard";
 import OperatingHours from "@/components/OperatingHours";
+import ContactWidget from "@/components/ContactWidget";
 import { MapPin, Phone, Mail } from "lucide-react";
 import {
   Carousel,
@@ -55,7 +57,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-16 px-4 bg-blue-50/30">
+      <section id="services" className="py-16 px-4 bg-gradient-to-b from-blue-50 to-purple-50/20">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
           <Carousel
@@ -67,7 +69,7 @@ const Index = () => {
           >
             <CarouselContent>
               {services.map((service, index) => (
-                <CarouselItem key={index} className="md:basis-1/4">
+                <CarouselItem key={index} className="md:basis-1/3">
                   <ServiceCard {...service} />
                 </CarouselItem>
               ))}
@@ -79,7 +81,7 @@ const Index = () => {
       </section>
 
       {/* About Section with subtle background */}
-      <section id="about" className="py-16 px-4 bg-blue-50/30">
+      <section id="about" className="py-16 px-4 bg-gradient-to-b from-purple-50/20 to-blue-50/30">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8">About Us</h2>
           <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto">
@@ -113,6 +115,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+      
+      {/* Contact Widget */}
+      <ContactWidget />
     </div>
   );
 };
