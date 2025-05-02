@@ -48,7 +48,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 bg-gradient-to-t from-blue-50/30 via-white to-white">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl font-bold mb-6">Welcome to Redental</h1>
+          <h1 className="text-5xl font-bold mb-6">Welcome to ReDental</h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Your trusted partner in dental care. We provide comprehensive dental services
             with a gentle touch and state-of-the-art technology.
@@ -85,7 +85,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8">About Us</h2>
           <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto">
-            At Redental, we're committed to providing exceptional dental care in a
+            At ReDental, we're committed to providing exceptional dental care in a
             comfortable and modern environment. Our team of experienced professionals
             uses the latest technology to ensure the best possible treatment for our patients.
           </p>
