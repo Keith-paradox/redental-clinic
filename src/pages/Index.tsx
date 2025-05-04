@@ -1,8 +1,6 @@
 
 import Navbar from "@/components/Navbar";
-import ServiceCard from "@/components/ServiceCard";
 import OperatingHours from "@/components/OperatingHours";
-import ContactWidget from "@/components/ContactWidget";
 import { MapPin, Phone, Mail } from "lucide-react";
 import {
   Carousel,
@@ -11,33 +9,35 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 
 const Index = () => {
   const services = [
     {
       title: "General Consultation",
       description: "Comprehensive dental examination and treatment planning for your oral health.",
-      icon: "🦷"
+      icon: "src/images/consultation.jpg"
     },
     {
       title: "Teeth Cleaning",
       description: "Professional cleaning to remove plaque and maintain oral hygiene.",
-      icon: "✨"
+      icon: "src/images/teeth_cleaning.jpg"
     },
     {
       title: "Teeth Whitening",
       description: "Advanced whitening treatments for a brighter, more confident smile.",
-      icon: "💫"
+      icon: "src/images/teeth_whitening.jpg"
     },
     {
       title: "Root Canal Treatment",
       description: "Expert care for infected or damaged tooth pulp to save your natural tooth.",
-      icon: "🔬"
+      icon: "src/images/root_canal_treatment.jpg"
     },
     {
       title: "Braces Consultation",
       description: "Orthodontic assessment and treatment planning for teeth alignment.",
-      icon: "📏"
+      icon: "src/images/braces_consultation.jpeg"
     }
   ];
 
@@ -46,7 +46,7 @@ const Index = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 bg-gradient-to-t from-blue-50/30 via-white to-white">
+      <section className="pt-32 pb-16 px-4 bg-gradient-to-t from-cyan-100/10 to-cyan-100/20">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-6">Welcome to ReDental</h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -57,31 +57,42 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-16 px-4 bg-gradient-to-b from-blue-50 to-purple-50/20">
+      <section id="services" className="py-16 px-4 bg-gradient-to-b from-slate-100/10 to-slate-200/50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full max-w-5xl mx-auto"
-          >
+          <Carousel className="w-full max-w-5xl mx-auto">
             <CarouselContent>
               {services.map((service, index) => (
-                <CarouselItem key={index} className="md:basis-1/3">
-                  <ServiceCard {...service} />
+                <CarouselItem key={index} className="md:basis-1/4">
+                  <Card className="h-full bg-cream-light hover:shadow-lg transition-shadow">
+                    <div className="relative w-full">
+                      <AspectRatio ratio={16/12}>
+                        <img 
+                          src={service.icon} 
+                          alt={service.title}
+                          className="object-cover w-full h-full rounded-t-lg"
+                        />
+                      </AspectRatio>
+                    </div>
+                    <CardHeader>
+                      <CardTitle className="text-xl font-semibold text-teak">{service.title}</CardTitle>
+                      <CardDescription className="text-sage-dark">{service.description}</CardDescription>
+                    </CardHeader>
+                  </Card>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
+            <div className="hidden md:block">
+              <CarouselPrevious className="-left-12" />
+              <CarouselNext className="-right-12" />
+            </div>
           </Carousel>
+          
         </div>
       </section>
 
       {/* About Section with subtle background */}
-      <section id="about" className="py-16 px-4 bg-gradient-to-b from-purple-50/20 to-blue-50/30">
+      <section id="about" className="py-16 px-4 bg-gradient-to-b from-slate-200/50 to-slate-100/10">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8">About Us</h2>
           <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto">
@@ -93,21 +104,21 @@ const Index = () => {
       </section>
 
       {/* Contact & Hours Section */}
-      <section id="contact" className="py-16 px-4 bg-gradient-to-b from-blue-50/30 via-white to-white">
+      <section id="contact" className="py-16 px-4 bg-gradient-to-b from-cyan-100/10 to-cyan-100/20">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Contact Us</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="space-y-6">
               <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-primary" />
+                <MapPin className="w-5 h-5 text-[#00ced1]" />
                 <p className="text-lg">123 Smile Avenue, Denton, TX 75001, USA</p>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-primary" />
+                <Phone className="w-5 h-5 text-[#00ced1]" />
                 <p className="text-lg">+1 (555) 123-4567</p>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-primary" />
+                <Mail className="w-5 h-5 text-[#00ced1]" />
                 <p className="text-lg">info@redentalclinic.com</p>
               </div>
             </div>

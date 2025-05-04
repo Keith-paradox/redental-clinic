@@ -46,7 +46,7 @@
         right: 20px;
         width: 350px;
         height: 500px;
-        background: white;
+        background: rgb(242, 242, 242);
         border-radius: 12px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         display: none;
@@ -56,7 +56,7 @@
       }
 
       #chat-widget-header {
-        background: #4f9bff;
+        background: #00a7aa;
         color: white;
         padding: 20px;
         font-weight: bold;
@@ -98,7 +98,7 @@
       }
 
       #chat-widget-send {
-        background: #4f9bff;
+        background: #00a7aa;
         color: white;
         border: none;
         padding: 8px 16px;
@@ -111,7 +111,7 @@
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background: #4f9bff;
+        background: #00ced1;
         color: white;
         border: none;
         width: 50px;
@@ -130,7 +130,7 @@
         position: fixed;
         bottom: 20px;
         right: 80px;
-        background: #4f9bff;
+        background: #00ced1;
         color: white;
         border: none;
         width: 50px;
@@ -152,7 +152,7 @@
         right: 20px;
         width: 300px;
         height: 120px;
-        background: white;
+        background: transparent;
         display: none;
         flex-direction: column;
         z-index: 1000;
@@ -166,16 +166,17 @@
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
 
-    <button id="voice-widget-button">📞</button>
+    <button id="voice-widget-button"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-audio-lines-icon lucide-audio-lines"><path d="M2 10v3"/><path d="M6 6v11"/><path d="M10 3v18"/><path d="M14 8v7"/><path d="M18 5v13"/><path d="M22 10v3"/></svg></button>
 
     <!-- Chat Widget Button -->
-    <button id="chat-widget-button">💬</button>
+    <button id="chat-widget-button"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot-message-square-icon lucide-bot-message-square"><path d="M12 6V2H8"/><path d="m8 18-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z"/><path d="M2 12h2"/><path d="M9 11v2"/><path d="M15 11v2"/><path d="M20 12h2"/></svg></button>
 
     <!-- Chat Widget -->
     <div id="chat-widget-container">
       <div id="chat-widget-header">
-        <span>Chat</span>
-        <button onclick="closeChatWidget()">✖</button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot-icon lucide-bot"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+        <p style="color: white; padding-right: 85px;">ReDental Support</p>
+        <button onclick="closeChatWidget()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
       </div>
       <div id="chat-widget-body"></div>
       <div id="chat-widget-footer">
@@ -190,7 +191,7 @@
 
     <div id="convai-widget-container">
       <div>
-        <elevenlabs-convai agent-id="KREP28KUbtlJXNglJ3nu"></elevenlabs-convai>
+        <elevenlabs-convai agent-id="pa87MsS0Nyk4jIkJcLDI"></elevenlabs-convai>
       </div>
       <button
         onclick="closeVoiceWidget()"
@@ -198,8 +199,8 @@
           position: absolute;
           right: 0;
           top: 0;
-          color: white;
-          background: grey;
+          color: black;
+          background: white;
           border: none;
           width: 24px;
           height: 24px;
@@ -275,52 +276,108 @@
           document.getElementById("chat-widget-button").style.display = "none";
           document.getElementById("voice-widget-button").style.display = "none";
         });
-      // Send message to n8n webhook
+
+    //   // Send message to n8n webhook
+    //   document
+    //     .getElementById("chat-widget-send")
+    //     .addEventListener("click", function () {
+    //       let message = document.getElementById("chat-widget-input").value;
+    //       if (message.trim() === "") return;
+
+    //       let chatBody = document.getElementById("chat-widget-body");
+    //       let newMessage = document.createElement("p");
+    //       newMessage.textContent = message;
+    //       newMessage.style.color = "#333";
+    //       newMessage.style.background = "#f1f1f1";
+    //       chatBody.appendChild(newMessage);
+
+    //       let chatId = getChatId(); // Retrieve the session chat ID
+
+    //       fetch(window.ChatWidgetConfig.webhook.url, {
+    //         method: "POST",
+    //         headers: { "Content-Type": "application/json" },
+    //         body: JSON.stringify({
+    //           chatId: chatId, // Attach chat ID for memory tracking
+    //           message: message,
+    //           route: window.ChatWidgetConfig.webhook.route,
+    //         }),
+    //       })
+    //         .then((response) => response.json())
+    //         .then((data) => {
+    //           let botMessage = document.createElement("p");
+    //           botMessage.innerHTML =
+    //             data.output || "Sorry, I couldn't understand that.";
+    //           botMessage.style.color = "#fff";
+    //           botMessage.style.background = "#854fff";
+    //           botMessage.style.marginTop = "10px";
+    //           chatBody.appendChild(botMessage);
+    //         })
+    //         .catch((error) => console.error("Error:", error));
+
+    //       document.getElementById("chat-widget-input").value = "";
+    //     });
+    // </script>
+
+    <script>
+      function sendMessage() {
+        let message = document.getElementById("chat-widget-input").value;
+        if (message.trim() === "") return;
+
+        let chatBody = document.getElementById("chat-widget-body");
+        let newMessage = document.createElement("p");
+        newMessage.textContent = message;
+        newMessage.style.color = "#333";
+        newMessage.style.background = "#ffffff";
+        chatBody.appendChild(newMessage);
+
+        let chatId = getChatId();
+
+        fetch(window.ChatWidgetConfig.webhook.url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chatId: chatId,
+            message: message,
+            route: window.ChatWidgetConfig.webhook.route,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            let botMessage = document.createElement("p");
+            botMessage.innerHTML =
+              data.output || "Sorry, I couldn't understand that.";
+            botMessage.style.color = "#fff";
+            botMessage.style.background = "#00a7aa";
+            botMessage.style.marginTop = "10px";
+            chatBody.appendChild(botMessage);
+          })
+          .catch((error) => console.error("Error:", error));
+
+        document.getElementById("chat-widget-input").value = "";
+      }
+
       document
         .getElementById("chat-widget-send")
-        .addEventListener("click", function () {
-          let message = document.getElementById("chat-widget-input").value;
-          if (message.trim() === "") return;
+        .addEventListener("click", sendMessage);
 
-          let chatBody = document.getElementById("chat-widget-body");
-          let newMessage = document.createElement("p");
-          newMessage.textContent = message;
-          newMessage.style.color = "#333";
-          newMessage.style.background = "#f1f1f1";
-          chatBody.appendChild(newMessage);
-
-          let chatId = getChatId(); // Retrieve the session chat ID
-
-          fetch(window.ChatWidgetConfig.webhook.url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              chatId: chatId, // Attach chat ID for memory tracking
-              message: message,
-              route: window.ChatWidgetConfig.webhook.route,
-            }),
-          })
-            .then((response) => response.json())
-            .then((data) => {
-              let botMessage = document.createElement("p");
-              botMessage.innerHTML =
-                data.output || "Sorry, I couldn't understand that.";
-              botMessage.style.color = "#fff";
-              botMessage.style.background = "#854fff";
-              botMessage.style.marginTop = "10px";
-              chatBody.appendChild(botMessage);
-            })
-            .catch((error) => console.error("Error:", error));
-
-          document.getElementById("chat-widget-input").value = "";
+      // Add this block to handle Enter key
+      document
+        .getElementById("chat-widget-input")
+        .addEventListener("keydown", function (e) {
+          if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault(); // prevent newline
+            sendMessage();
+          }
         });
     </script>
 
-    <script
-      src="https://elevenlabs.io/convai-widget/index.js"
-      async
-      type="text/javascript"
-    ></script>
+
+    
+    <script 
+      src="https://elevenlabs.io/convai-widget/index.js" 
+      async 
+      type="text/javascript">
+    </script>
 
     <script>
       function showConvai() {
