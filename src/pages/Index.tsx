@@ -10,35 +10,44 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 
 const Index = () => {
   const services = [
     {
       title: "General Consultation",
       description: "Comprehensive dental examination and treatment planning for your oral health.",
-      icon: "src/images/consultation.jpg"
+      icon: "src/images/dental.png"
     },
     {
       title: "Teeth Cleaning",
       description: "Professional cleaning to remove plaque and maintain oral hygiene.",
-      icon: "src/images/teeth_cleaning.jpg"
+      icon: "src/images/cleaning.png"
     },
     {
       title: "Teeth Whitening",
       description: "Advanced whitening treatments for a brighter, more confident smile.",
-      icon: "src/images/teeth_whitening.jpg"
+      icon: "src/images/whitening.png"
     },
     {
       title: "Root Canal Treatment",
       description: "Expert care for infected or damaged tooth pulp to save your natural tooth.",
-      icon: "src/images/root_canal_treatment.jpg"
+      icon: "src/images/root_canal.png"
     },
     {
       title: "Braces Consultation",
       description: "Orthodontic assessment and treatment planning for teeth alignment.",
-      icon: "src/images/braces_consultation.jpeg"
+      icon: "src/images/braces.png"
     }
+    // {
+    //   title: "Dental Implants",
+    //   description: "Permanent tooth replacement with natural-looking dental implants.",
+    //   icon: "src/images/implant.png"
+    // },
+    // {
+    //   title: "Wisdom Tooth Extraction",
+    //   description: "Safe and painless removal of impacted or problematic wisdom teeth.",
+    //   icon: "src/images/tooth-extraction.png"
+    // }
   ];
 
   return (
@@ -64,21 +73,21 @@ const Index = () => {
             <CarouselContent>
               {services.map((service, index) => (
                 <CarouselItem key={index} className="md:basis-1/4">
+
                   <Card className="h-full bg-cream-light hover:shadow-lg transition-shadow">
-                    <div className="relative w-full">
-                      <AspectRatio ratio={16/12}>
-                        <img 
-                          src={service.icon} 
-                          alt={service.title}
-                          className="object-cover w-full h-full rounded-t-lg"
-                        />
-                      </AspectRatio>
+                    <div className="w-full flex items-center justify-center py-4">
+                      <img 
+                        src={service.icon} 
+                        alt={service.title}
+                        className="w-20 h-20 object-contain"
+                      />
                     </div>
-                    <CardHeader>
+                    <CardHeader className="text-center">
                       <CardTitle className="text-xl font-semibold text-teak">{service.title}</CardTitle>
                       <CardDescription className="text-sage-dark">{service.description}</CardDescription>
                     </CardHeader>
                   </Card>
+
                 </CarouselItem>
               ))}
             </CarouselContent>
@@ -127,8 +136,6 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Contact Widget */}
-      {/* <ContactWidget /> */}
     </div>
   );
 };
