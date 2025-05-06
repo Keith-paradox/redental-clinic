@@ -296,8 +296,8 @@
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            chatId: chatId,
-            message: message,
+            sessionId: chatId,
+            input: message,
             route: window.ChatWidgetConfig.webhook.route,
           }),
         })
