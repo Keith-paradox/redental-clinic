@@ -10,33 +10,38 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import dental from "@/images/dental.png"
+import cleaning from "@/images/cleaning.png"
+import whitening from "@/images/whitening.png"
+import root_canal from "@/images/root_canal.png"
+import braces from "@/images/braces.png"
 
 const Index = () => {
   const services = [
     {
       title: "General Consultation",
       description: "Comprehensive dental examination and treatment planning for your oral health.",
-      icon: "src/images/dental.png"
+      icon: dental
     },
     {
       title: "Teeth Cleaning",
       description: "Professional cleaning to remove plaque and maintain oral hygiene.",
-      icon: "src/images/cleaning.png"
+      icon: cleaning
     },
     {
       title: "Teeth Whitening",
       description: "Advanced whitening treatments for a brighter, more confident smile.",
-      icon: "src/images/whitening.png"
+      icon: whitening
     },
     {
       title: "Root Canal Treatment",
       description: "Expert care for infected or damaged tooth pulp to save your natural tooth.",
-      icon: "src/images/root_canal.png"
+      icon: root_canal
     },
     {
       title: "Braces Consultation",
       description: "Orthodontic assessment and treatment planning for teeth alignment.",
-      icon: "src/images/braces.png"
+      icon: braces
     }
     // {
     //   title: "Dental Implants",
